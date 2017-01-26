@@ -6,7 +6,7 @@ The following **scopes** are required to execute this API: Reports.Read.All
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /applications/{id}
+GET /reports/{id}
 ```
 ## Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -41,54 +41,18 @@ Here is an example of the response. Note: The response object shown here may be 
 HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 636
-
-
 { 
 "value":[ 
 { 
-"tenantId":"12bce6d0-bfeb-4a82-abe6-98ccf3196a11", 
-"createdDateTime":"2016-10-16T00:00:00+00:00", 
-"licensedUsersCount":28, 
-"activeUsersCount":0, 
-"secureScore":115, 
-"organizationMaxScore":243, 
-"accountScore":33, 
-"dataScore":45, 
-"deviceScore":37, 
-"enabledService":[ 
-“exchange”,  
-“lync”, 
-“sharepoint”, 
-“OD4B”, 
-“Yammer” 
-],  
-"controlScores":[{ 
-"AdminMFA":[ 
-{ 
-"score":"21"}, 
-}, 
-{ 
-"maxScore":"50" 
-}, 
-{ 
-"count":"9" 
-}, 
-{ 
-"total":"16" 
-} 
-], 
-[{ 
-… 
-}] 
-}], 
-"averageSecureScore":16.5588017, 
-"averageMaxScore":237.017166, 
-"averageAccountScore":3.69947028, 
-"averageDataScore":12.7047329, 
-"averageDeviceScore":0.154599056 
-}], 
-[{ 
-… 
+      "tenantId":"12bce6d0-bfeb-4a82-abe6-98ccf3196a11", 
+      "createdDateTime":"2016-10-16T00:00:00+00:00", 
+      "licensedUsersCount":28, 
+      "activeUsersCount":0, 
+      "secureScore":115, 
+      "organizationMaxScore":243, 
+      "accountScore":33, 
+      "dataScore":45, 
+      "deviceScore":37, 
 }] 
 } 
 
