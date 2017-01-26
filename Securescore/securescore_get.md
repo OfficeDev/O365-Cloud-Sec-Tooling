@@ -40,7 +40,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ```http
 HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 636
+
 { 
 "value":[ 
 { 
@@ -62,7 +62,7 @@ Content-length: 636
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Get application",
+  "description": "Get tenantsecurescores",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""
