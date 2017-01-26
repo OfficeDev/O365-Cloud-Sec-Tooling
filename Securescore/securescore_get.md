@@ -1,8 +1,8 @@
-# Get application
+# Get tenantsecurescores
 
-Retrieve the properties and relationships of application object.
+Retrieve all tenant secure score data for the specified date range. The data can be queried on the period field which holds the days for which the data was collected. 
 ## Prerequisites
-The following **scopes** are required to execute this API: *Directory.Read.All* or *Directory.ReadWrite.All* or *Directory.AccessAsUser.All*
+The following **scopes** are required to execute this API: Reports.Read.All 
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -19,7 +19,7 @@ This method supports the [OData Query Parameters](http://graph.microsoft.io/docs
 ## Request body
 Do not supply a request body for this method.
 ## Response
-If successful, this method returns a `200 OK` response code and [application](../resources/application.md) object in the response body.
+If successful, this method returns a 200 OK response code version object and collection of score data objects for every Secure Score control in the response body. 
 ## Example
 ##### Request
 Here is an example of the request.
@@ -28,7 +28,7 @@ Here is an example of the request.
   "name": "get_application"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/applications/{id}
+GET https://graph.microsoft.com/v1.0/reports/getTenantSecureScores(period=1)/content
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
@@ -42,37 +42,56 @@ HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 636
 
-{
-  "addIns": [
-    {
-      "id": "id-value",
-      "type": "type-value",
-      "properties": [
-        {
-          "key": "key-value",
-          "value": "value-value"
-        }
-      ]
-    }
-  ],
-  "appId": "appId-value",
-  "appRoles": [
-    {
-      "allowedMemberTypes": [
-        "allowedMemberTypes-value"
-      ],
-      "description": "description-value",
-      "displayName": "displayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "origin": "origin-value",
-      "value": "value-value"
-    }
-  ],
-  "availableToOtherOrganizations": true,
-  "displayName": "displayName-value",
-  "errorUrl": "errorUrl-value"
-}
+
+{ 
+"value":[ 
+{ 
+"tenantId":"12bce6d0-bfeb-4a82-abe6-98ccf3196a11", 
+"createdDateTime":"2016-10-16T00:00:00+00:00", 
+"licensedUsersCount":28, 
+"activeUsersCount":0, 
+"secureScore":115, 
+"organizationMaxScore":243, 
+"accountScore":33, 
+"dataScore":45, 
+"deviceScore":37, 
+"enabledService":[ 
+“exchange”,  
+“lync”, 
+“sharepoint”, 
+“OD4B”, 
+“Yammer” 
+],  
+"controlScores":[{ 
+"AdminMFA":[ 
+{ 
+"score":"21"}, 
+}, 
+{ 
+"maxScore":"50" 
+}, 
+{ 
+"count":"9" 
+}, 
+{ 
+"total":"16" 
+} 
+], 
+[{ 
+… 
+}] 
+}], 
+"averageSecureScore":16.5588017, 
+"averageMaxScore":237.017166, 
+"averageAccountScore":3.69947028, 
+"averageDataScore":12.7047329, 
+"averageDeviceScore":0.154599056 
+}], 
+[{ 
+… 
+}] 
+} 
+
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
