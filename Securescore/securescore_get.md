@@ -1,11 +1,14 @@
 # Get tenantsecurescores
 
-Retrieve all tenant secure score data for the specified date range. 
+Retrieve your historical Secure Score data for a specified (n) number of days.
 
-The data can be queried on the period field which holds the days for which the data was collected. 
+The data set returned can be adjusted using the period field which is an integer value between 1 and 90, defined as number of days.
+
+If you entered 1 you would retrive 1 days history of Secure Score data from todays date, if you entered 90, you would retrieve 90 days history of Secure Score data from todays date. 
 
 ## Prerequisites
 The following **scopes** are required to execute this API: Reports.Read.All
+
 The following **roles** are required to execute this API: Tenant Admin
 
 ## HTTP request
@@ -22,9 +25,26 @@ None
 | Authorization  | string  | Bearer <token>. Required. |
 
 ## Request body
-Do not supply a request body for this method.
+/getTenantSecureScores(period=)/content
 ## Response
-If successful, this method returns a 200 OK response code version object and collection of score data objects for every Secure Score control in the response body. 
+If successful, this method returns a 200 OK response code version object and collection of score data objects for every Secure Score control in the response body.
+## Response Content Definitions
+tenantId              : (GUID) Your tenant ID
+createdDate           : (STRING) YYYY; MM; DD}
+licensedUserCount     : (INT) Licensed users
+activeUserCount       : (INT) Active users
+secureScore           : (INT) Your Secure Score
+maxSecureScore        : (INT) Your maximum attainable Secure Score
+accountScore          : (INT) Your Secure Score for Account Controls
+dataScore             : (INT) Your Secure Score for Data Controls
+deviceScore           : (INT) Your Secure Score for Device Controls
+enabledServices       : (STRING) Enabled Services
+controlScores         : (STRING) Individual Control Scores
+averageSecureScore    : (INT) Average O365 Secure Score
+averageMaxSecureScore : (INT) Average O365 Maximal Attainable O365 Secure Score
+averageAccountScore   : (INT) Average O365 Secure Score for Account Controls
+averageDataScore      : (INT) Average O365 Secure Score for Data Controls
+averageDeviceScore    : (INT) Average O365 Secure Score for Device Controls
 ## Example
 ##### Request
 Here is an example of the request.
