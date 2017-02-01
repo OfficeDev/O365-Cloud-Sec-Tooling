@@ -1,4 +1,3 @@
-﻿cls
 $cred = Get-Credential
 $mycred = new-object Microsoft.IdentityModel.Clients.ActiveDirectory.UserCredential($cred.UserName,$cred.Password)
 
@@ -11,7 +10,7 @@ $adalforms = “${env:ProgramFiles(x86)}\Microsoft SDKs\Azure\PowerShell\Service
 [System.Reflection.Assembly]::LoadFrom($adal)
 [System.Reflection.Assembly]::LoadFrom($adalforms)
 
-# Use the Client ID of native App that was registered in the Azure App Portal
+# Use the Client ID of native App that was registered in the Azure App Portal, where xxxxxx-xxxx-xxxx-xxxxxxx is the ID of your Client app
 $clientId = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx"
 
 # Set redirect URI for Azure PowerShell
@@ -38,5 +37,5 @@ $authHeader = @{
 }
 
 # Execute the REST query, where X = the integer value of 1-90 of the number of days history you wish to retrieve.
-$resource = "https://graph.microsoft.com/stagingBeta/reports/getTenantSecureScores(period=X)/content"
+$resource = "https://graph.microsoft.com/v1.0/reports/getTenantSecureScores(period=X)/content"
 Invoke-RestMethod -Method Get -Uri $resource -Headers $authHeader
