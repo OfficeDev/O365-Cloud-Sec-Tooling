@@ -30,21 +30,37 @@ None
 If successful, this method returns a 200 OK response code version object and collection of score data objects for every Secure Score control in the response body.
 ## Response Content Definitions
 tenantId              : (GUID) Your tenant ID
+
 createdDate           : (STRING) YYYY; MM; DD}
+
 licensedUserCount     : (INT) Licensed users
+
 activeUserCount       : (INT) Active users
+
 secureScore           : (INT) Your Secure Score
+
 maxSecureScore        : (INT) Your maximum attainable Secure Score
+
 accountScore          : (INT) Your Secure Score for Account Controls
+
 dataScore             : (INT) Your Secure Score for Data Controls
+
 deviceScore           : (INT) Your Secure Score for Device Controls
+
 enabledServices       : (STRING) Enabled Services
+
 controlScores         : (STRING) Individual Control Scores
+
 averageSecureScore    : (INT) Average O365 Secure Score
+
 averageMaxSecureScore : (INT) Average O365 Maximal Attainable O365 Secure Score
+
 averageAccountScore   : (INT) Average O365 Secure Score for Account Controls
+
 averageDataScore      : (INT) Average O365 Secure Score for Data Controls
+
 averageDeviceScore    : (INT) Average O365 Secure Score for Device Controls
+
 ## Example
 ##### Request
 Here is an example of the request.
@@ -62,7 +78,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "truncated": true,
   "@odata.type": "microsoft.graph.application"
 } -->
-```http
+```
 HTTP/1.1 200 OK
 Content-type: application/json
 
