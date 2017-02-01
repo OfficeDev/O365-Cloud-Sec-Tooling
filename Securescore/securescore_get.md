@@ -1,15 +1,20 @@
 # Get tenantsecurescores
 
-Retrieve all tenant secure score data for the specified date range. The data can be queried on the period field which holds the days for which the data was collected. 
+Retrieve all tenant secure score data for the specified date range. 
+
+The data can be queried on the period field which holds the days for which the data was collected. 
+
 ## Prerequisites
-The following **scopes** are required to execute this API: Reports.Read.All 
+The following **scopes** are required to execute this API: Reports.Read.All
+The following **roles** are required to execute this API: Tenant Admin
+
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /reports/{id}
+GET /reports/getTenantSecureScores(period=)/content
 ```
 ## Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+None
 
 ## Request headers
 | Name       | Type | Description|
@@ -42,18 +47,23 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 { 
-"value":[ 
-{ 
-      "tenantId":"12bce6d0-bfeb-4a82-abe6-98ccf3196a11", 
-      "createdDateTime":"2016-10-16T00:00:00+00:00", 
-      "licensedUsersCount":28, 
-      "activeUsersCount":0, 
-      "secureScore":115, 
-      "organizationMaxScore":243, 
-      "accountScore":33, 
-      "dataScore":45, 
-      "deviceScore":37, 
-}] 
+tenantId              : 12bce6d0-bfeb-4a82-abe6-98ccf3196a11
+createdDate           : @{Year=2017; Month=1; Day=31}
+licensedUserCount     : 28
+activeUserCount       : 0
+secureScore           : 92
+maxSecureScore        : 271
+accountScore          : 39
+dataScore             : 53
+deviceScore           : 0
+enabledServices       : {HasExchange, HasLync, HasSharePoint, HasOD4B...}
+controlScores         : {@{referenceId=AdminMFA; score=8; maxScore=50; controlDetails=}, @{referenceId=UserMFA; score=7; maxScore=30; controlDetails=}, @{referenceId=AltInfoIncomplete; score=1; 
+                        maxScore=1; controlDetails=}, @{referenceId=DLPEnabled; score=20; maxScore=20; controlDetails=}...}
+averageSecureScore    : 19.1315212
+averageMaxSecureScore : 261.859253
+averageAccountScore   : 4.38279533
+averageDataScore      : 14.6059513
+averageDeviceScore    : 0.142776
 } 
 
 ```
