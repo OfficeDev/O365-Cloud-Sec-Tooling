@@ -1,0 +1,10 @@
+{
+    "Description": "Global configuration file for Secure Score API Service to Service OAuth Calls",
+    "SSAPIAppID": "YOUR APPID HERE",
+    "SSAPIAppSecret": "YOUR APP SECRET HERE",
+    "SSAPITenantDomain": "YOUR TENANT DOMAIN HERE",
+    "SSAPITenantGUID": "YOUR TENANT GUID HERE",
+    "LoginURL" : "https://login.windows.net",
+    "ResourceAPI" : "https://graph.microsoft.com/",
+    "SecureScoreAPI" : "https://graph.microsoft.com/stagingBeta/reports/getTenantSecureScores(period=9)/content"
+}
