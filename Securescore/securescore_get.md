@@ -9,7 +9,7 @@ If you entered 1 you would retrive 1 days history of Secure Score data from toda
 ## Prerequisites
 The following **scopes** are required to execute this API: Reports.Read.All
 
-The following **roles** are required to execute this API: Tenant Admin
+The following **roles** are able to execute this API: TenantAdmin, SecurityAdmin, HelpdeskAdmin, ExchangeAdmin, SharePointAdmin, UserAccountAdmin
 
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
@@ -47,19 +47,19 @@ dataScore             : (INT) Your Secure Score for Data Controls
 
 deviceScore           : (INT) Your Secure Score for Device Controls
 
-enabledServices       : (STRING) Enabled Services
+enabledServices       : (STRING) Collection of Strings, showing enabled Tenant Services
 
-controlScores         : (STRING) Individual Control Scores
+controlScores         : (STRING) Dictionary(String, Object). Contains control specific information. For e.g. for adminMFA control it will have 2 values. The total number of administrators and number of admins that don’t have MFA enabled. The entries in controlDetails will change per control.
 
-averageSecureScore    : (INT) Average O365 Secure Score
+averageSecureScore    : (DOUBLE) Average O365 Secure Score
 
-averageMaxSecureScore : (INT) Average O365 Maximal Attainable O365 Secure Score
+averageMaxSecureScore : (DOUBLE) Average O365 Maximal Attainable O365 Secure Score
 
-averageAccountScore   : (INT) Average O365 Secure Score for Account Controls
+averageAccountScore   : (DOUBLE) Average O365 Secure Score for Account Controls
 
-averageDataScore      : (INT) Average O365 Secure Score for Data Controls
+averageDataScore      : (DOUBLE) Average O365 Secure Score for Data Controls
 
-averageDeviceScore    : (INT) Average O365 Secure Score for Device Controls
+averageDeviceScore    : (DOUBLE) Average O365 Secure Score for Device Controls
 
 ## Example
 ##### Request
