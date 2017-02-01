@@ -31,7 +31,7 @@ If successful, this method returns a 200 OK response code version object and col
 ## Response Content Definitions
 tenantId              : (GUID) Your tenant ID
 
-createdDate           : (STRING) YYYY; MM; DD}
+createdDate           : (STRING) YYYY; MM; DD
 
 licensedUserCount     : (INT) Licensed users
 
