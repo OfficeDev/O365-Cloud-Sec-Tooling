@@ -30,6 +30,6 @@ $oauth = Invoke-RestMethod -Method Post -Uri $loginURL/$tenantdomain/oauth2/toke
 $headerParams  = @{'Authorization'="$($oauth.token_type) $($oauth.access_token)"}
 
 # Execute the Rest Query
-Invoke-RestMethod -Method Get -Uri $ssAPI -Headers $authHeader
+Invoke-RestMethod -Method Get -Uri $ssAPI -Headers $headerParams
 
 #Do Some Magic here to process, store, or otherwise use the data being returned
