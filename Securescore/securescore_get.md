@@ -28,6 +28,8 @@ None
 /getTenantSecureScores(period=)/content
 ## Response
 If successful, this method returns a 200 OK response code version object and collection of score data objects for every Secure Score control in the response body.
+## Error
+If successful, this method returns a 400 Bad Request code version object and collection of score data objects for every Secure Score control in the response body. For example if period ranges outside 1-90 are chosen.
 ## Response Content Definitions
 tenantId              : (GUID) Your tenant ID
 
@@ -82,25 +84,55 @@ Here is an example of the response. Note: The response object shown here may be 
 HTTP/1.1 200 OK
 Content-type: application/json
 
-{ 
-tenantId              : 12bce6d0-bfeb-4a82-abe6-98ccf3196a11
-createdDate           : @{Year=2017; Month=1; Day=31}
-licensedUserCount     : 28
-activeUserCount       : 0
-secureScore           : 92
-maxSecureScore        : 271
-accountScore          : 39
-dataScore             : 53
-deviceScore           : 0
-enabledServices       : {HasExchange, HasLync, HasSharePoint, HasOD4B...}
-controlScores         : {@{referenceId=AdminMFA; score=8; maxScore=50; controlDetails=}, @{referenceId=UserMFA; score=7; maxScore=30; controlDetails=}, @{referenceId=AltInfoIncomplete; score=1; 
-                        maxScore=1; controlDetails=}, @{referenceId=DLPEnabled; score=20; maxScore=20; controlDetails=}...}
-averageSecureScore    : 19.1315212
-averageMaxSecureScore : 261.859253
-averageAccountScore   : 4.38279533
-averageDataScore      : 14.6059513
-averageDeviceScore    : 0.142776
-} 
+{
+  "tenantId": "12bce6d0-bfeb-4a82-abe6-98ccf3196a11",
+  "createdDate": "2017-01-31",
+  "licensedUserCount": 28,
+  "activeUserCount": 0,
+  "secureScore": 92,
+  "maxSecureScore": 271,
+  "accountScore": 39,
+  "dataScore": 53,
+  "deviceScore": 0,
+  "enabledServices": [
+    "HasExchange",
+    "HasLync",
+    "HasSharePoint",
+    "HasOD4B"
+  ],
+  "controlScores": [
+    {
+      "referenceId": "AdminMFA",
+      "score": 8,
+      "maxScore": 50,
+      "controlDetails": null
+    },
+    {
+      "referenceId": "UserMFA",
+      "score": 7,
+      "maxScore": 30,
+      "controlDetails": null
+    },
+    {
+      "referenceId": "AltInfoIncomplete",
+      "score": 1,
+      "maxScore": 1,
+      "controlDetails": null
+    },
+    {
+      "referenceId": "DLPEnabled",
+      "score": 20,
+      "maxScore": 20,
+      "controlDetails": null
+    }
+  ],
+  "averageSecureScore": 19.1315212,
+  "averageMaxSecureScore": 261.859253,
+  "averageAccountScore": 4.38279533,
+  "averageDataScore": 14.6059513,
+  "averageDeviceScore": 0.142776
+}
+
 
 ```
 
