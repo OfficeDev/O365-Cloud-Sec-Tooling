@@ -29,7 +29,7 @@ None
 ## Response
 If successful, this method returns a 200 OK response code version object and collection of score data objects for every Secure Score control in the response body.
 ## Error
-If successful, this method returns a 400 Bad Request code version object and collection of score data objects for every Secure Score control in the response body. For example if period ranges outside 1-90 are chosen.
+If unsuccessful, this method returns a 400 Bad Request code. For example if period ranges outside 1-90 are chosen.
 ## Response Content Definitions
 tenantId              : (GUID) Your tenant ID
 
