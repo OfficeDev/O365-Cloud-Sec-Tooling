@@ -1,3 +1,13 @@
+---
+topic: sample
+products:
+- Office 365
+languages:
+- PowerShell
+extensions:
+  contentType: tools
+  createdDate: 1/18/2017 10:17:48 AM
+---
 
 # O365-Cloud-Sec-Tooling
 A collection of useful PowerShell scripts to demonstrate interacting with various customer facing features via the Graph API,
