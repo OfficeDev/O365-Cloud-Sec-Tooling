@@ -1,9 +1,9 @@
 ---
 topic: sample
 products:
-- Office 365
+- office-365
 languages:
-- PowerShell
+- powershell
 extensions:
   contentType: tools
   createdDate: 1/18/2017 10:17:48 AM
