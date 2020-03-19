@@ -1,14 +1,3 @@
----
-topic: sample
-products:
-- office-365
-languages:
-- powershell
-extensions:
-  contentType: tools
-  createdDate: 1/18/2017 10:17:48 AM
----
-
 # O365-Cloud-Sec-Tooling
 A collection of useful PowerShell scripts to demonstrate interacting with various customer facing features via the Graph API,
 such as Secure Score.
