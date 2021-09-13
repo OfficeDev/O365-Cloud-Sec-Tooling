@@ -15,6 +15,7 @@ You will need to ensure the following are in place.
 1. You are a tenant admin.
 2. The latest version of the Azure PowerShell module is installed for the the ADAL .NET assemblies. http://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/ 
 3. In order to obtain an access token for authenticating to an application, we need to specify a few unique application details so that we can create an appropriate token.  We need to specify the application's unique Client ID, Redirect URI, and Application ID URI. Details on registering an application in Azure AD here to setup a new application can be found here https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios.
+Specifically required permission: "Reports.Read.All"
 4. Once you have created your application, you will also need to ensure grant Admin Consent.
 
 A good 3rd Party reference blog can be found here https://blog.kloud.com.au/2016/09/13/leveraging-the-microsoft-graph-api-with-powershell-and-oauth-2-0/ 
